@@ -1,0 +1,39 @@
+# Unity-generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Audio and texture compression cache
+[Aa]sset[Ss]tore/
+
+# Crash reports
+[Cc]rash[Rr]eports/
+
+# Auto-generated files
+[Aa]utomatic[Aa]ssets/
+
+# Visual Studio files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# Other files
+.vs/
+.idea/
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
