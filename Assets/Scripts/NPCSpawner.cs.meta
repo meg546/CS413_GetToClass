@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 03fd90f73af85eb4fa605fbc1c1f167e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - walkableTilemap: {instanceID: 0}
+  - npcPrefab: {fileID: 7738286065790112911, guid: ab65d62a832bb3143a483e7ab5e832a0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

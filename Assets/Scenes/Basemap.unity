@@ -256,6 +256,8 @@ MonoBehaviour:
   walkableTilemap: {fileID: 1511181502}
   powerUpPrefabs:
   - {fileID: 337297917773548205, guid: e3a10d9641710d041a51eb9a528a6e9a, type: 3}
+  numberOfPowerUps: 1
+  verticalOffset: -0.5
 --- !u!4 &216484011
 Transform:
   m_ObjectHideFlags: 0
@@ -3199,7 +3201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4365a5eb99045404bb8b39ccdef6923c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 1771989917}
 --- !u!54 &1146526054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3263,11 +3265,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123437381842956806, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7123437381842956806, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7123437381842956806, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
       propertyPath: m_LocalScale.z
@@ -4083,6 +4085,7 @@ GameObject:
   - component: {fileID: 1771989916}
   - component: {fileID: 1771989915}
   - component: {fileID: 1771989914}
+  - component: {fileID: 1771989917}
   m_Layer: 5
   m_Name: PowerUpCounter
   m_TagString: Untagged
@@ -4206,6 +4209,19 @@ RectTransform:
   m_AnchoredPosition: {x: -752, y: -504}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1771989917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771989913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ceb5941005b4252bfbad8283a8aaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpCountText: {fileID: 1771989914}
 --- !u!1 &1826760225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5111,6 +5127,53 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &1966733009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966733011}
+  - component: {fileID: 1966733012}
+  m_Layer: 0
+  m_Name: NPCSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1966733011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966733009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966733012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966733009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03fd90f73af85eb4fa605fbc1c1f167e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkableTilemap: {fileID: 1511181502}
+  npcPrefab: {fileID: 7738286065790112911, guid: ab65d62a832bb3143a483e7ab5e832a0, type: 3}
+  verticalOffset: -0.5
 --- !u!1 &1989287328
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,6 +5498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2031790054}
+  - component: {fileID: 2031790055}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5457,6 +5521,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2031790055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031790052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3113d6303abf68b43b0b6e97b31a2490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcSpawner: {fileID: 1966733012}
+  npcCount: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5469,3 +5547,4 @@ SceneRoots:
   - {fileID: 765847134}
   - {fileID: 2031790054}
   - {fileID: 216484011}
+  - {fileID: 1966733011}
