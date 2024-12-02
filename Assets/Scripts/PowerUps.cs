@@ -1,20 +1,14 @@
 using UnityEngine;
 
-public class PowerUpScript : MonoBehaviour
+public class PowerUps : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other) // For 3D collision
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Ensure the colliding object is the player
+        Player player = other.GetComponent<Player>();
+        if (player != null)
         {
-            // Optional: Call a method on the player script
-            Player player = other.GetComponent<Player>();
-            if (player != null)
-            {
-                player.CollectPowerUp(); // Handle power-up collection logic
-            }
-
-            // Destroy the power-up
-            Destroy(gameObject);
+            player.CollectPowerUp(); // Call the CollectPowerUp method
+            Destroy(gameObject); // Destroy the current power-up
         }
     }
 }
