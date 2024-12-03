@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.SceneManagement; // Required for scene management
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public List<Tilemap> walkableTilemaps; // List of walkable tilemaps
-    public float moveSpeed = 5f;          // Adjust for desired speed
+    public Tilemap walkableTilemap; // Single walkable tilemap
+    public float moveSpeed = 5f;   // Adjust for desired speed
 
     private Vector3Int currentTilePosition;
     private Vector3Int doorPosition = new Vector3Int(6, 4, 0); // Door position in tile coordinates
@@ -18,15 +17,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         // Initialize the player's current position
-        Tilemap primaryTilemap = walkableTilemaps.Count > 0 ? walkableTilemaps[0] : null;
-        if (primaryTilemap != null)
+        if (walkableTilemap != null)
         {
-            currentTilePosition = primaryTilemap.WorldToCell(transform.position);
-            transform.position = primaryTilemap.GetCellCenterWorld(currentTilePosition);
+            currentTilePosition = walkableTilemap.WorldToCell(transform.position);
+            transform.position = walkableTilemap.GetCellCenterWorld(currentTilePosition);
         }
         else
         {
-            Debug.LogError("No walkable tilemaps assigned.");
+            Debug.LogError("No walkable tilemap assigned.");
         }
 
         // Record start time for tracking duration
@@ -48,27 +46,20 @@ public class PlayerMovement : MonoBehaviour
             targetTilePosition += new Vector3Int(1, 0, 0);
 
         // Check if the target position is walkable
-        if (IsWalkableTile(targetTilePosition))
+        if (IsWalkableTile(targetTilePosition) || targetTilePosition == doorPosition)
         {
             currentTilePosition = targetTilePosition;
-            transform.position = walkableTilemaps[0].GetCellCenterWorld(currentTilePosition);
+            transform.position = walkableTilemap.GetCellCenterWorld(currentTilePosition);
 
             // Check if the player is at the door
             CheckForDoor(currentTilePosition);
         }
     }
 
-    // Check if a tile is walkable in any of the tilemaps
+    // Check if a tile is walkable
     private bool IsWalkableTile(Vector3Int tilePosition)
     {
-        foreach (Tilemap tilemap in walkableTilemaps)
-        {
-            if (tilemap.GetTile(tilePosition) != null)
-            {
-                return true; // Found a walkable tile
-            }
-        }
-        return false; // No walkable tile found
+        return walkableTilemap.GetTile(tilePosition) != null; // Check for non-null tile
     }
 
     // Check if the player has reached the door
