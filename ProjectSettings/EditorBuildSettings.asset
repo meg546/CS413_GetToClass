@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Basemap.unity
+    guid: bc80f7129faa546c190933ece10c69ac
+  - enabled: 1
+    path: Assets/Scenes/ScoreScene.unity
+    guid: a04a836c81b3dac46b9928393b4c9d71
   m_configObjects: {}
