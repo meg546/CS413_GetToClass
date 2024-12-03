@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public List<Tilemap> walkableTilemaps; // List of walkable tilemaps
     public float moveSpeed = 5f;          // Adjust for desired speed
-
+    public Tilemap walkableTilemap; // Assign the Tilemap for the walkways
     private Vector3Int currentTilePosition;
     private Vector3Int doorPosition = new Vector3Int(6, 4, 0); // Door position in tile coordinates
 
@@ -17,17 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        // Initialize the player's current position
-        Tilemap primaryTilemap = walkableTilemaps.Count > 0 ? walkableTilemaps[0] : null;
-        if (primaryTilemap != null)
-        {
-            currentTilePosition = primaryTilemap.WorldToCell(transform.position);
-            transform.position = primaryTilemap.GetCellCenterWorld(currentTilePosition);
-        }
-        else
-        {
-            Debug.LogError("No walkable tilemaps assigned.");
-        }
+        // Set initial tile position based on the player's starting location
+        currentTilePosition = walkableTilemap.WorldToCell(transform.position);
+        CenterOnTile();
 
         // Record start time for tracking duration
         startTime = Time.time;
@@ -51,12 +43,18 @@ public class PlayerMovement : MonoBehaviour
         if (IsWalkableTile(targetTilePosition))
         {
             currentTilePosition = targetTilePosition;
-            transform.position = walkableTilemaps[0].GetCellCenterWorld(currentTilePosition);
-
+            CenterOnTile();
             // Check if the player is at the door
             CheckForDoor(currentTilePosition);
         }
     }
+            // Center the player on the current tile
+    void CenterOnTile()
+    {
+        Vector3 tileCenter = walkableTilemap.GetCellCenterWorld(currentTilePosition);
+        transform.position = tileCenter + new Vector3(0 , 0.5f , 0); // Adjust 'y_offset' as needed
+    }
+
 
     // Check if a tile is walkable in any of the tilemaps
     private bool IsWalkableTile(Vector3Int tilePosition)
