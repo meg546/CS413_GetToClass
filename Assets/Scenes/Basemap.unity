@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &965458 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1690369413513858937, guid: c0a63653d7770044d819966aaef068c7, type: 3}
+  m_PrefabInstance: {fileID: 7785603848396815226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &123403293 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1316244120515590915, guid: c0a63653d7770044d819966aaef068c7, type: 3}
@@ -178,7 +183,7 @@ RectTransform:
   m_Children:
   - {fileID: 1771989916}
   - {fileID: 771850257}
-  - {fileID: 195758447}
+  - {fileID: 965458}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3401,6 +3406,30 @@ PrefabInstance:
       propertyPath: walkableTilemap
       value: 
       objectReference: {fileID: 1511181502}
+    - target: {fileID: 1631098810190202180, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
+      propertyPath: walkableTilemaps.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631098810190202180, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
+      propertyPath: walkableTileNames.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631098810190202180, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
+      propertyPath: walkableTilemaps.Array.data[0]
+      value: 
+      objectReference: {fileID: 1511181502}
+    - target: {fileID: 1631098810190202180, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
+      propertyPath: walkableTilemaps.Array.data[1]
+      value: 
+      objectReference: {fileID: 1989287331}
+    - target: {fileID: 1631098810190202180, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
+      propertyPath: walkableTileNames.Array.data[0]
+      value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631098810190202180, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
+      propertyPath: walkableTileNames.Array.data[1]
+      value: Walkway
+      objectReference: {fileID: 0}
     - target: {fileID: 3079718342093439993, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
       propertyPath: m_Name
       value: Student
