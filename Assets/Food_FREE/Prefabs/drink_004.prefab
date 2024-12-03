@@ -13,6 +13,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0de433cdd2e4443429aa1ea006d5ed6f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0de433cdd2e4443429aa1ea006d5ed6f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0de433cdd2e4443429aa1ea006d5ed6f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0de433cdd2e4443429aa1ea006d5ed6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.26
       objectReference: {fileID: 0}
@@ -60,13 +72,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: drink_004
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0de433cdd2e4443429aa1ea006d5ed6f, type: 3}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0de433cdd2e4443429aa1ea006d5ed6f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8730058693481084468}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0de433cdd2e4443429aa1ea006d5ed6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2335809106772562928}
@@ -79,18 +92,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0de433cdd2e4443429aa1ea006d5ed6f, type: 3}
   m_PrefabInstance: {fileID: 4927425145478217846}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8730058693481084468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5233414496755891495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d56826bf7ff724e6a9fd0bc86caae68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2335809106772562928
 MonoBehaviour:
   m_ObjectHideFlags: 0
