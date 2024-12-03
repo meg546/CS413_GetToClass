@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Set initial tile position based on the player's starting location
         currentTilePosition = walkableTilemap.WorldToCell(transform.position);
-        transform.position = walkableTilemap.GetCellCenterWorld(currentTilePosition);
+        CenterOnTile();
     }
 
     void Update()
@@ -33,9 +33,18 @@ public class PlayerMovement : MonoBehaviour
         if (IsWalkableTile(targetTilePosition))
         {
             currentTilePosition = targetTilePosition;
-            transform.position = walkableTilemap.GetCellCenterWorld(currentTilePosition);
+            CenterOnTile();
         }
     }
+
+    // Center the player on the current tilevoid CenterOnTile()
+    void CenterOnTile()
+    {
+        Vector3 tileCenter = walkableTilemap.GetCellCenterWorld(currentTilePosition);
+        transform.position = tileCenter + new Vector3(0 , 0.5f , 0); // Adjust 'y_offset' as needed
+    }
+
+
 
     // Check if a tile is walkable
     private bool IsWalkableTile(Vector3Int tilePosition)

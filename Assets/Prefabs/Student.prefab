@@ -94,10 +94,11 @@ GameObject:
   - component: {fileID: 7123437381842956806}
   - component: {fileID: 7232152398075179248}
   - component: {fileID: 7413994391184666246}
-  - component: {fileID: 3402779490071439821}
   - component: {fileID: 3699977548272903532}
   - component: {fileID: 5519728186182667554}
   - component: {fileID: 1631098810190202180}
+  - component: {fileID: 4885362659381613517}
+  - component: {fileID: 1877817321209336563}
   m_Layer: 6
   m_Name: Student
   m_TagString: Player
@@ -175,27 +176,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3402779490071439821
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3079718342093439993}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3699977548272903532
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -250,6 +230,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkableTilemap: {fileID: 0}
   moveSpeed: 5
+--- !u!114 &4885362659381613517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3079718342093439993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eb90106d2fcef4792d8c3be368dc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 10
+--- !u!65 &1877817321209336563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3079718342093439993}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 5, z: 4}
+  m_Center: {x: 0, y: -2, z: 1}
 --- !u!1 &5538158997668113311
 GameObject:
   m_ObjectHideFlags: 0
