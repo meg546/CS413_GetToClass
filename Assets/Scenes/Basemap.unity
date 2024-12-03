@@ -271,6 +271,11 @@ MonoBehaviour:
   choiceTexts:
   - {fileID: 147183966}
   - {fileID: 123403293}
+--- !u!224 &195758447 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1690369413513858937, guid: c0a63653d7770044d819966aaef068c7, type: 3}
+  m_PrefabInstance: {fileID: 7785603848396815226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216484009
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,13 +3478,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3402779490071439821, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3079718342093439993, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1520568528}
+    - targetCorrespondingSourceObject: {fileID: 3079718342093439993, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1520568536}
   m_SourcePrefab: {fileID: 100100000, guid: 0c65b8f380de6a54090622a0530f31c8, type: 3}
 --- !u!1 &1511181499
 GameObject:
@@ -4243,6 +4252,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactRange: 10
+--- !u!65 &1520568536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520568520}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 5, z: 4}
+  m_Center: {x: 0, y: -2, z: 1}
 --- !u!1 &1771989913
 GameObject:
   m_ObjectHideFlags: 0
