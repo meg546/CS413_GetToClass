@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3Int currentTilePosition;
     private Vector3Int doorPosition = new Vector3Int(6, 4, 0); // Door position in tile coordinates
 
-    // Score and time variables (example placeholders)
-    public int playerScore = 100; // Replace with your score logic
+    // Score and time variables
+    public int playerScore = 100;
     private float startTime;
 
     void Start()
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         if (walkableTilemap != null)
         {
             currentTilePosition = walkableTilemap.WorldToCell(transform.position);
-            transform.position = walkableTilemap.GetCellCenterWorld(currentTilePosition);
+            CenterOnTile();
         }
         else
         {
@@ -49,11 +49,17 @@ public class PlayerMovement : MonoBehaviour
         if (IsWalkableTile(targetTilePosition) || targetTilePosition == doorPosition)
         {
             currentTilePosition = targetTilePosition;
-            transform.position = walkableTilemap.GetCellCenterWorld(currentTilePosition);
-
+            CenterOnTile();
             // Check if the player is at the door
             CheckForDoor(currentTilePosition);
         }
+    }
+
+    // Center the player on the current tile
+    void CenterOnTile()
+    {
+        Vector3 tileCenter = walkableTilemap.GetCellCenterWorld(currentTilePosition);
+        transform.position = tileCenter + new Vector3(0, 0.5f, 0); // Adjust 'y_offset' as needed
     }
 
     // Check if a tile is walkable
