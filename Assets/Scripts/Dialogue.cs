@@ -13,17 +13,17 @@ public class Dialogue : MonoBehaviour
     public GameObject button;
     public float wordSpeed;
     public bool playerRange;
+    private bool isTyping;
 
     void Update()
     {
-        if (playerRange)
+        if (playerRange && !dialoguePanel.activeInHierarchy)
         {
-           dialoguePanel.SetActive(true);
-           StartCoroutine(Typing());
-         
+            dialoguePanel.SetActive(true);
+            StartCoroutine(Typing());
         }
 
-        if (dialogueText.text == dialogue[index])
+        if (!isTyping && dialogueText.text == dialogue[index])
         {
             button.SetActive(true);
         }
