@@ -65,6 +65,7 @@ public class NPCQuestion : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player entered NPC");
             playerInRange = true;
         }
     }

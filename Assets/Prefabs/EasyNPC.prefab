@@ -865,6 +865,7 @@ GameObject:
   - component: {fileID: 7738286065790112908}
   - component: {fileID: 7738286065790112909}
   - component: {fileID: 7738286065790112910}
+  - component: {fileID: 2204348923870380948}
   m_Layer: 0
   m_Name: EasyNPC
   m_TagString: Untagged
@@ -991,6 +992,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2204348923870380948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738286065790112911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b7b4ca598a2bc4f81ee863b16e2e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chatBox: {fileID: 1625897084112523155, guid: c0a63653d7770044d819966aaef068c7, type: 3}
+  questionText: {fileID: 0}
+  choiceTexts: []
+  question: True or False
+  choices:
+  - True
+  - False
+  - Rome
+  correctAnswerIndex: 0
 --- !u!1 &9112891216847465791
 GameObject:
   m_ObjectHideFlags: 0
